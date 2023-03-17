@@ -61,11 +61,4 @@ class RovModelSDF:
         with open("model_version", "w") as model_v_file:
             self.model_v = str(int(self.model_v) + 1)
             model_v_file.write(self.model_v)
-
-def main():
-    rov_model_sdf = RovModelSDF(1, 2, 3, 4)
-    print(rov_model_sdf.model_v)
-
-if __name__ == "__main__":
-    main()
         
