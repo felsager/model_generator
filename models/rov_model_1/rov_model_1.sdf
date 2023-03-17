@@ -3,26 +3,26 @@
   <model name='rov_starting_point'>
     <link name='box_body'>
       <inertial>
-        <mass>m_box</mass>
+        <mass>4</mass>
         <inertia>
-          <ixx>I_x</ixx>
+          <ixx>4.333333333333333</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>I_y</iyy>
+          <iyy>3.333333333333333</iyy>
           <iyz>0</iyz>
-          <izz>I_z</izz>
+          <izz>1.6666666666666665</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
       <self_collide>0</self_collide>
       <enable_wind>0</enable_wind>
       <kinematic>0</kinematic>
-      <pose>0 0 p_z 0 -0 0</pose>
+      <pose>0 0 -1.5 0 -0 0</pose>
       <gravity>1</gravity>
       <visual name='visual'>
         <geometry>
           <box>
-            <size>w_box l_box h_box</size>
+            <size>1 2 3</size>
           </box>
         </geometry>
         <material>
@@ -48,7 +48,7 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>w_box l_box h_box</size>
+            <size>1 2 3</size>
           </box>
         </geometry>
         <surface>
@@ -111,7 +111,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>-0 p_side_y p_z 1.57081 1.57079 1.57081</pose>
+      <pose>-0 1.039 -1.5 1.57081 1.57079 1.57081</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -120,8 +120,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <material>
@@ -147,8 +147,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <surface>
@@ -211,7 +211,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>-0 -p_side_y p_z 1.5708 1.57078 1.5708</pose>
+      <pose>-0 -1.039 -1.5 1.5708 1.57078 1.5708</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -220,8 +220,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <material>
@@ -247,8 +247,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <surface>
@@ -311,7 +311,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>p_up_x p_up_y p_z 0 -0 0</pose>
+      <pose>0.539 0.961 -1.5 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -320,8 +320,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <material>
@@ -347,8 +347,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <surface>
@@ -411,7 +411,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>-p_up_x -p_up_y p_z 0 -0 0</pose>
+      <pose>-0.539 -0.961 -1.5 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -420,8 +420,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <material>
@@ -447,8 +447,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <surface>
@@ -511,7 +511,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>p_up_x -p_up_y p_z 0 -0 0</pose>
+      <pose>0.539 -0.961 -1.5 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -520,8 +520,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <material>
@@ -547,8 +547,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <surface>
@@ -611,7 +611,7 @@
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
-      <pose>-p_up_x p_side_y p_z 0 -0 0</pose>
+      <pose>-0.539 1.039 -1.5 0 -0 0</pose>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
@@ -620,8 +620,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <material>
@@ -647,8 +647,8 @@
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
-            <radius>r_thruster</radius>
-            <length>l_thruster</length>
+            <radius>0.039</radius>
+            <length>0.112</length>
           </cylinder>
         </geometry>
         <surface>

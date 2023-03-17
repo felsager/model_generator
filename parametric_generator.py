@@ -7,9 +7,9 @@ class RovModelSDF:
         self.l_box = l_box
         self.h_box = h_box
         self.m_box = m_box
+        self.I_box = self.calculate_box_inertia() # [I_x, I_y, I_z]
         self.l_thruster = 0.112
         self.r_thruster = 0.039
-        self.m_thruster = 0
 
         self.model_v = self.get_pre_model_v()
         self.update_model_v()
@@ -20,6 +20,8 @@ class RovModelSDF:
         
         self.create_model_dir()
         self.create_model_config()
+
+
         self.create_model_sdf()
 
     "Create the model directory"
@@ -35,17 +37,36 @@ class RovModelSDF:
 
     "Create the model SDF file"
     def create_model_sdf(self):
-        
         print("Creating model SDF file")
+        I = self.calculate_box_inertia()
+        p_z = -self.h_box/2 # z position of the box
+        p_side_y = self.l_box/2 + self.r_thruster # y position of the side thrusters
+        p_up_x = self.w_box/2 + self.r_thruster # x position of the up thrusters
+        p_up_y = self.l_box/2 - self.r_thruster # y position of the up thrusters
+        with open(self.model_sdf_path, "w") as model_file:
+            with open("templates/model_template", "r") as model_template:
+                model_template = model_template.read()
+                model_template = model_template.replace("p_z", str(p_z))
+                model_template = model_template.replace("p_side_y", str(p_side_y))
+                model_template = model_template.replace("p_up_x", str(p_up_x))
+                model_template = model_template.replace("p_up_y", str(p_up_y))
+                model_template = model_template.replace("I_x", str(I[0]))
+                model_template = model_template.replace("I_y", str(I[1]))
+                model_template = model_template.replace("I_z", str(I[2]))
+                model_template = model_template.replace("m_box", str(self.m_box))
+                model_template = model_template.replace("w_box", str(self.w_box))
+                model_template = model_template.replace("l_box", str(self.l_box))
+                model_template = model_template.replace("h_box", str(self.h_box))
+                model_template = model_template.replace("l_thruster", str(self.l_thruster))
+                model_template = model_template.replace("r_thruster", str(self.r_thruster))
+                model_file.write(model_template)
 
-    def create_box_pose(self):
-        return "0 0 0 0 0 0"
-    
-    def create_side_thruster_poses(self):
-        return "0 0 0 0 0 0"
-    
-    def create_vertical_thruster_poses(self):
-        return "0 0 0 0 0 0"
+    " Calculate the inertia of the box "
+    def calculate_box_inertia(self):
+        I_x = (1/12) * self.m_box * (self.h_box**2 + self.l_box**2)
+        I_y = (1/12) * self.m_box * (self.h_box**2 + self.w_box**2)
+        I_z = (1/12) * self.m_box * (self.l_box**2 + self.w_box**2)
+        return [I_x, I_y, I_z]
 
     "Get the model version from the model_version file"
     def get_pre_model_v(self):
