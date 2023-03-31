@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="uuv_simple">
+    <scene>
+      <!-- For turquoise ambient -->
+      <ambient>0.0 1.0 1.0</ambient>
+      <background>0.0 0.7 0.8</background>
+    </scene>
+
+    <physics name="1ms" type="ode">
+      <max_step_size>0.0001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+    
+    <plugin
+      filename="ignition-gazebo-buoyancy-system"
+      name="ignition::gazebo::systems::Buoyancy">
+      <uniform_fluid_density>1000</uniform_fluid_density>
+    </plugin>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    
+    <include >
+        <plugin filename="libignition-gazebo-pose-publisher-system.so"
+        name="ignition::gazebo::systems::PosePublisher">
+        <publish_link_pose>true</publish_link_pose>
+        <use_pose_vector_msg>true</use_pose_vector_msg>
+        <publish_nested_model_pose>true</publish_nested_model_pose>
+        <static_publisher>true</static_publisher>
+        <static_update_frequency>100</static_update_frequency>
+      </plugin>
+        <pose>0 0 1 0 0 0</pose>
+        <uri>file://home/felsager/Workspaces/uuv_ws/src/model_generator/models/rov_model_1/rov_model_1.sdf</uri>
+        <plugin
+            filename="ignition-gazebo-thruster-system"
+            name="ignition::gazebo::systems::Thruster">
+            <namespace>rov_starting_point</namespace>
+            <joint_name>box_thruster_up_neg_right</joint_name>
+            <thrust_coefficient>0.00001</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.078</propeller_diameter>
+        </plugin>
+        
+        <plugin
+            filename="ignition-gazebo-thruster-system"
+            name="ignition::gazebo::systems::Thruster">
+            <namespace>rov_starting_point</namespace>
+            <joint_name>box_thruster_side_pos</joint_name>
+            <thrust_coefficient>0.00001</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.078</propeller_diameter>
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-thruster-system"
+            name="ignition::gazebo::systems::Thruster">
+            <namespace>rov_starting_point</namespace>
+            <joint_name>box_thruster_side_neg</joint_name>
+            <thrust_coefficient>0.00001</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.078</propeller_diameter>
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-thruster-system"
+            name="ignition::gazebo::systems::Thruster">
+            <namespace>rov_starting_point</namespace>
+            <joint_name>box_thruster_up_pos_left</joint_name>
+            <thrust_coefficient>0.00001</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.078</propeller_diameter>
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-thruster-system"
+            name="ignition::gazebo::systems::Thruster">
+            <namespace>rov_starting_point</namespace>
+            <joint_name>box_thruster_up_pos_right</joint_name>
+            <thrust_coefficient>0.00001</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.078</propeller_diameter>
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-thruster-system"
+            name="ignition::gazebo::systems::Thruster">
+            <namespace>rov_starting_point</namespace>
+            <joint_name>box_thruster_up_neg_left</joint_name>
+            <thrust_coefficient>0.00001</thrust_coefficient>
+            <fluid_density>1000</fluid_density>
+            <propeller_diameter>0.078</propeller_diameter>
+        </plugin>
+        <plugin
+            filename="ignition-gazebo-hydrodynamics-system"
+            name="ignition::gazebo::systems::Hydrodynamics">
+                <link_name>box_body</link_name>
+                    <xDotU>9</xDotU>
+                    <yDotV>9</yDotV>
+                    <zDotW>2.7</zDotW>
+                    <kDotP>0.02</kDotP>
+                    <mDotQ>0.02</mDotQ>
+                    <nDotR>0.02</nDotR>
+                    <xU>-9</xU>
+                    <yV>-9</yV>
+                    <zW>-9</zW>
+                    <kP>-0.24</kP>
+                    <mQ>-0.24</mQ>
+                    <nR>-0.24</nR>
+                    <xUU>-2.7</xUU>
+                    <yVV>-2.7</yVV>
+                    <zWW>-2.7</zWW>
+                    <kPP>-0.8</kPP>
+                    <mQQ>-0.8</mQQ>
+                    <nRR>-0.8</nRR>
+            </plugin>
+    </include>
+
+  </world>
+</sdf>

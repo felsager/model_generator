@@ -2,11 +2,11 @@ import os
 print(os.getcwd())
 ''' Class to generate a ROV SDF model parametrically'''
 class RovModelSDF:
-    def __init__(self, w_box, l_box, h_box, m_box):
+    def __init__(self, w_box, l_box, h_box):
         self.w_box = w_box
         self.l_box = l_box
         self.h_box = h_box
-        self.m_box = m_box
+        self.m_box = w_box*l_box*h_box*1000 - 0.006# mass of the box is set to achieve neutral buoyancy
         self.I_box = self.calculate_box_inertia() # [I_x, I_y, I_z]
         self.l_thruster = 0.112
         self.r_thruster = 0.039
