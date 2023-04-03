@@ -8,6 +8,25 @@
     </scene>
 
     <physics name="1ms" type="ode">
+      <solver>
+        <type>quick</type>
+        <iters>1000</iters>
+        <precon_iters>0</precon_iters>
+        <sor>1.3</sor>
+        <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        <min_step_size>0.0001</min_step_size>
+        <mg_levels>3</mg_levels>
+        <monitor_condition>0</monitor_condition>
+        <contact_surface_layer>0.001</contact_surface_layer>
+        <warm_start_factor>0.8</warm_start_factor>
+        <secondary_lcp_solver>pgs</secondary_lcp_solver>
+      </solver>
+      <constraints>
+        <cfm>0.0</cfm>
+        <erp>0.2</erp>
+        <contact_max_correcting_vel>100.0</contact_max_correcting_vel>
+        <contact_surface_layer>0.001</contact_surface_layer>
+      </constraints>
       <max_step_size>0.0001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
@@ -60,7 +79,7 @@
             name="ignition::gazebo::systems::Thruster">
             <namespace>rov_starting_point</namespace>
             <joint_name>box_thruster_up_neg_right</joint_name>
-            <thrust_coefficient>0.00001</thrust_coefficient>
+            <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.078</propeller_diameter>
         </plugin>
@@ -70,7 +89,7 @@
             name="ignition::gazebo::systems::Thruster">
             <namespace>rov_starting_point</namespace>
             <joint_name>box_thruster_side_pos</joint_name>
-            <thrust_coefficient>0.00001</thrust_coefficient>
+            <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.078</propeller_diameter>
         </plugin>
@@ -79,7 +98,7 @@
             name="ignition::gazebo::systems::Thruster">
             <namespace>rov_starting_point</namespace>
             <joint_name>box_thruster_side_neg</joint_name>
-            <thrust_coefficient>0.00001</thrust_coefficient>
+            <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.078</propeller_diameter>
         </plugin>
@@ -88,7 +107,7 @@
             name="ignition::gazebo::systems::Thruster">
             <namespace>rov_starting_point</namespace>
             <joint_name>box_thruster_up_pos_left</joint_name>
-            <thrust_coefficient>0.00001</thrust_coefficient>
+            <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.078</propeller_diameter>
         </plugin>
@@ -97,7 +116,7 @@
             name="ignition::gazebo::systems::Thruster">
             <namespace>rov_starting_point</namespace>
             <joint_name>box_thruster_up_pos_right</joint_name>
-            <thrust_coefficient>0.00001</thrust_coefficient>
+            <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.078</propeller_diameter>
         </plugin>
@@ -106,7 +125,7 @@
             name="ignition::gazebo::systems::Thruster">
             <namespace>rov_starting_point</namespace>
             <joint_name>box_thruster_up_neg_left</joint_name>
-            <thrust_coefficient>0.00001</thrust_coefficient>
+            <thrust_coefficient>0.004422</thrust_coefficient>
             <fluid_density>1000</fluid_density>
             <propeller_diameter>0.078</propeller_diameter>
         </plugin>
@@ -129,9 +148,9 @@
                     <xUU>-2.7</xUU>
                     <yVV>-2.7</yVV>
                     <zWW>-2.7</zWW>
-                    <kPP>-0.8</kPP>
-                    <mQQ>-0.8</mQQ>
-                    <nRR>-0.8</nRR>
+                    <kPP>-5</kPP>
+                    <mQQ>-5</mQQ>
+                    <nRR>-5</nRR>
             </plugin>
     </include>
 

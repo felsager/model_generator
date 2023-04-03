@@ -100,14 +100,14 @@
     </link>
     <link name='thruster_side_pos'>
       <inertial>
-        <mass>1e-3</mass>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>1e-6</ixx>
+          <ixx>76e-6</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-6</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1e-6</izz>
+          <izz>1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -145,14 +145,14 @@
     </link>
     <link name='thruster_side_neg'>
       <inertial>
-        <mass>1e-3</mass>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>1e-6</ixx>
+          <ixx>76e-6</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-6</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1e-6</izz>
+          <izz>1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -190,14 +190,14 @@
     </link>
     <link name='thruster_up_pos_left'>
       <inertial>
-        <mass>1e-3</mass>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>1e-6</ixx>
+          <ixx>76e-6</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-6</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1e-6</izz>
+          <izz>1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -235,14 +235,14 @@
     </link>
     <link name='thruster_up_neg_right'>
       <inertial>
-        <mass>1e-3</mass>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>1e-6</ixx>
+          <ixx>76e-6</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-6</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1e-6</izz>
+          <izz>1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -280,14 +280,14 @@
     </link>
     <link name='thruster_up_pos_right'>
       <inertial>
-        <mass>1e-3</mass>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>1e-6</ixx>
+          <ixx>76e-6</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-6</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1e-6</izz>
+          <izz>1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -325,14 +325,14 @@
     </link>
     <link name='thruster_up_neg_left'>
       <inertial>
-        <mass>1e-3</mass>
+        <mass>0.1</mass>
         <inertia>
-          <ixx>1e-6</ixx>
+          <ixx>76e-6</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1e-6</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1e-6</izz>
+          <izz>1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -376,10 +376,10 @@
         <xyz>0 0 1</xyz>
         <limit>
             <lower>-1e+12</lower>
-                <upper>1e+12</upper>
-                <effort>-1</effort>
-                <velocity>5</velocity>
-            </limit>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>5</velocity>
+        </limit>
       </axis>
     </joint>
     <joint name='box_thruster_side_neg' type='revolute'>
@@ -390,10 +390,10 @@
         <xyz>0 0 1</xyz>
         <limit>
             <lower>-1e+12</lower>
-                <upper>1e+12</upper>
-                <effort>-1</effort>
-                <velocity>5</velocity>
-            </limit>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>5</velocity>
+        </limit>
       </axis>
     </joint>
     <joint name='box_thruster_up_pos_left' type='revolute'>
@@ -404,10 +404,10 @@
         <xyz>0 0 1</xyz>
         <limit>
             <lower>-1e+12</lower>
-                <upper>1e+12</upper>
-                <effort>-1</effort>
-                <velocity>5</velocity>
-            </limit>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>5</velocity>
+        </limit>
       </axis>
     </joint>
     <joint name='box_thruster_up_pos_right' type='revolute'>
@@ -418,10 +418,10 @@
         <xyz>0 0 1</xyz>
         <limit>
             <lower>-1e+12</lower>
-                <upper>1e+12</upper>
-                <effort>-1</effort>
-                <velocity>5</velocity>
-            </limit>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>5</velocity>
+        </limit>
       </axis>
     </joint>
     <joint name='box_thruster_up_neg_left' type='revolute'>
@@ -432,10 +432,10 @@
         <xyz>0 0 1</xyz>
         <limit>
             <lower>-1e+12</lower>
-                <upper>1e+12</upper>
-                <effort>-1</effort>
-                <velocity>5</velocity>
-            </limit>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>5</velocity>
+        </limit>
       </axis>
     </joint>
     <joint name='box_thruster_up_neg_right' type='revolute'>
@@ -446,10 +446,10 @@
         <xyz>0 0 1</xyz>
         <limit>
             <lower>-1e+12</lower>
-                <upper>1e+12</upper>
-                <effort>-1</effort>
-                <velocity>5</velocity>
-            </limit>
+            <upper>1e+12</upper>
+            <effort>-1</effort>
+            <velocity>5</velocity>
+        </limit>
       </axis>
     </joint>
     <static>0</static>
